@@ -73,7 +73,7 @@ $(document).ready(function() {
       if(message != "")
         alert(message);
 
-      $('#board li').text('+');
+      $('#board li').text(' ');
       $('#board li').removeClass('disable');
       $('#board li').removeClass('o');
       $('#board li').removeClass('x');
