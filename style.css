@@ -72,10 +72,10 @@ h1{
 
       #board li{
         float: left;
-        margin: 35px;
-        height: 140px;
-        width: 140px;
-        font-size: 120px;
+        margin: 30px;
+        height: 150px;
+        width: 150px;
+        font-size: 130px;
         border-radius: 25px;
       }
 
