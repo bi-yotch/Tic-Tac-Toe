@@ -23,6 +23,14 @@ h1{
   text-align: center;
 }
 
+@media screen and (max-width: 500px) {
+  #container {
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 #board li{
   float: left;
   margin: 10px;
