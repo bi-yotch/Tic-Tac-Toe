@@ -92,6 +92,10 @@ nobr{
         font-size: 80px;
       }
 
+      nobr {
+        font-size: 50px;
+      }
+
       #reset{
         padding: 25px;
         border-radius: 25px;
