@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   for(var i=1; i<10; i++)
-    $('ul').prepend('<li id="spot'+i+'">+</li>');
+    $('ul').prepend('<li id="spot'+i+'"> </li>');
 
   var x = "x", o = "o", turns = 0;
 
