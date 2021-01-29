@@ -41,6 +41,17 @@ $(document).ready(function() {
         resetContent("It's a tie! Better luck next time!");
     }
 
+    if (turns%2 == 0) {
+      $('nobr').text("O's Turn");
+      $('nobr').removeClass('x');
+      $('nobr').addClass('o');
+    }
+    else {
+      $('nobr').text("X's Turn");
+      $('nobr').removeClass('o');
+      $('nobr').addClass('x');
+      }
+
     $('#reset').on('click', function() {
       resetContent("");
     });
