@@ -58,16 +58,14 @@ h1{
   color: magenta !important;
 }
 
-
-
 @media only screen
-    and (min-device-width: 375px)
+    and (max-device-width: 550px)
     /*and (min-device-height: 812px)
     and (-webkit-device-pixel-ratio: 3)*/
     and (orientation: portrait) {
       #container {
         width: 700px;
-        margin: 120px auto;
+        margin: 100px auto;
         padding-bottom: 60px;
         border-radius: 50px;
       }
