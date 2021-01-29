@@ -7,6 +7,15 @@ body{
 h1{
   text-align: center;
   color: #fff;
+  margin-bottom: 11px;
+}
+
+nobr{
+  text-align: center;
+  color: #fff;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .clearfix{
@@ -51,11 +60,11 @@ h1{
 }
 
 .o{
-  color: cyan !important;
+  color: darkslateblue !important;
 }
 
 .x{
-  color: magenta !important;
+  color: mediumspringgreen !important;
 }
 
 @media only screen
