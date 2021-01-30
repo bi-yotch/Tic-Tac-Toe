@@ -4,7 +4,6 @@ $(document).ready(function() {
     $('ul').prepend('<li id="spot'+i+'"> </li>');
 
   var x = "x", o = "o", turns = 0;
-
   var spot1 = $('#spot1'), spot2 = $('#spot2'), spot3 = $('#spot3'), spot4 = $('#spot4'),
    spot5 = $('#spot5'), spot6 = $('#spot6'), spot7 = $('#spot7'), spot8 = $('#spot8'), spot9 = $('#spot9');
 
@@ -13,29 +12,21 @@ $(document).ready(function() {
     //else if($(this).hasClass('disable')) { alert('This spot is already filled!'); }
     if(turns % 2 == 0) {
       turns++;
-      $(this).text('O');
-      $(this).addClass('disable o');
+      $(this).text('O').addClass('disable o');
 
       check('o');
     }
     else if(turns % 2 == 1) {
       turns++;
-      $(this).text('X');
-      $(this).addClass('disable x');
+      $(this).text('X').addClass('disable x');
 
       check('x');
     }
 
-    if (turns%2 == 0) {
-      $('nobr').text("O's Turn");
-      $('nobr').removeClass('x');
-      $('nobr').addClass('o');
-    }
-    else {
-      $('nobr').text("X's Turn");
-      $('nobr').removeClass('o');
-      $('nobr').addClass('x');
-      }
+    if (turns%2 == 0)
+      $('nobr').text("O's Turn").removeClass('x').addClass('o');
+    else
+      $('nobr').text("X's Turn").removeClass('o').addClass('x');
 
     $('#reset').on('click', function() {
       resetContent("");
@@ -50,8 +41,7 @@ $(document).ready(function() {
           spot3.hasClass(value) && spot6.hasClass(value) && spot9.hasClass(value) ||
           spot1.hasClass(value) && spot5.hasClass(value) && spot9.hasClass(value) ||
           spot3.hasClass(value) && spot5.hasClass(value) && spot7.hasClass(value) )
-
-            resetContent('Winner: '+value.toUpperCase());
+              resetContent('Winner: '+value.toUpperCase());
       else if(turns == 9)
         resetContent("It's a tie! Better luck next time!");
     }
@@ -60,14 +50,8 @@ $(document).ready(function() {
       if(message != "")
         alert(message);
 
-      $('#board li').text(' ');
-      $('#board li').removeClass('disable');
-      $('#board li').removeClass('o');
-      $('#board li').removeClass('x');
-
-      $('nobr').text("O's Turn");
-      $('nobr').removeClass('x');
-      $('nobr').addClass('o');
+      $('#board li').text(' ').removeClass('disable').removeClass('o').removeClass('x');
+      $('nobr').text("O's Turn").removeClass('x').addClass('o');
       turns = 0;
     }
 
