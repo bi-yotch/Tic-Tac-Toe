@@ -9,36 +9,21 @@ $(document).ready(function() {
    spot5 = $('#spot5'), spot6 = $('#spot6'), spot7 = $('#spot7'), spot8 = $('#spot8'), spot9 = $('#spot9');
 
   $('#board li').on('click', function() {
-    if(check('o'))
-          resetContent('Winner: O');
-    else if(check('x'))
-          resetContent('Winner: X');
-    else if(turns == 9)
-      resetContent("It's a tie! Better luck next time!");
-    else if($(this).hasClass('disable')) { /*alert('This spot is already filled!');*/ }
-    else if(turns % 2 == 0) {
+
+    //else if($(this).hasClass('disable')) { alert('This spot is already filled!'); }
+    if(turns % 2 == 0) {
       turns++;
       $(this).text('O');
       $(this).addClass('disable o');
 
-      if(check('o')) {
-        resetContent('Winner: O');
-        turns = 0;
-      }
-      else if(turns == 9)
-          resetContent("It's a tie! Better luck next time!");
+      check('o');
     }
     else if(turns % 2 == 1) {
       turns++;
       $(this).text('X');
       $(this).addClass('disable x');
 
-      if(check('x')) {
-        resetContent('Winner: X');
-        turns = 0;
-      }
-      else if(turns == 9)
-        resetContent("It's a tie! Better luck next time!");
+      check('x');
     }
 
     if (turns%2 == 0) {
@@ -65,8 +50,10 @@ $(document).ready(function() {
           spot3.hasClass(value) && spot6.hasClass(value) && spot9.hasClass(value) ||
           spot1.hasClass(value) && spot5.hasClass(value) && spot9.hasClass(value) ||
           spot3.hasClass(value) && spot5.hasClass(value) && spot7.hasClass(value) )
-          return true;
-      return false;
+
+            resetContent('Winner: '+value.toUpperCase());
+      else if(turns == 9)
+        resetContent("It's a tie! Better luck next time!");
     }
 
     function resetContent(message) {
@@ -77,6 +64,10 @@ $(document).ready(function() {
       $('#board li').removeClass('disable');
       $('#board li').removeClass('o');
       $('#board li').removeClass('x');
+
+      $('nobr').text("O's Turn");
+      $('nobr').removeClass('x');
+      $('nobr').addClass('o');
       turns = 0;
     }
 
