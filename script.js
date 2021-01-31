@@ -9,7 +9,7 @@ $(document).ready(function() {
 
   $('#board li').on('click', function() {
 
-    if($(this).hasClass('disable')) { /*alert('This spot is already filled!');*/ break; }
+    if($(this).hasClass('disable')) { /*alert('This spot is already filled!');*/ }
     else if(turns % 2 == 0) {
       turns++;
       $(this).text('O').addClass('disable o');
