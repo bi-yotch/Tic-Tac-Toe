@@ -9,8 +9,8 @@ $(document).ready(function() {
 
   $('#board li').on('click', function() {
 
-    //else if($(this).hasClass('disable')) { alert('This spot is already filled!'); }
-    if(turns % 2 == 0) {
+    if($(this).hasClass('disable')) { /*alert('This spot is already filled!');*/ break; }
+    else if(turns % 2 == 0) {
       turns++;
       $(this).text('O').addClass('disable o');
 
